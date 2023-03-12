@@ -1,7 +1,12 @@
 <div *ngFor="let todo of todos">
-    <app-todo-item [todo]="todo" (todoTextClicked)="updateTodoStatus(todo)"></app-todo-item>
+    <div class="todo__item">
+        <app-todo-item [todo]="todo" (todoTextClicked)="updateTodoStatus(todo)"></app-todo-item>
+        <div class="todo__controler">
+            <button (click)="switchEditMode(todo)">Edit</button>
+            <button (click)="deliteTodo(todo)">Delete</button>
+        </div>
+    </div>
+    <app-edit-item-window [todo]=" todo" *ngIf="todo.editMode" (saveButtonClicked)="updateTodoText(todo)"
+        (cancelButtonClicked)="switchEditMode(todo)" class="todo__editMode"></app-edit-item-window>
 </div>
-
-
-
 <button class="button" (click)="onAddButtonClicked()">Add Todo</button>

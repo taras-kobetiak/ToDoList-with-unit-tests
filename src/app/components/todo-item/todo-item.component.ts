@@ -7,6 +7,7 @@ import { IToDo } from 'src/app/interfaces/todos.interface';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
+
   @Input() todo: IToDo;
   @Output() todoTextClicked: EventEmitter<IToDo> = new EventEmitter();
 

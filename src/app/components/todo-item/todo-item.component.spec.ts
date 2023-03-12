@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoItemComponent } from './todo-item.component';
@@ -9,8 +9,7 @@ describe('TodoItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoItemComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      declarations: [TodoItemComponent]
     })
       .compileComponents();
 
@@ -19,7 +18,8 @@ describe('TodoItemComponent', () => {
     component.todo = {
       id: '101',
       text: 'testing todo-item text',
-      completed: false
+      completed: false,
+      editMode: false
     }
     fixture.detectChanges();
   });
@@ -32,7 +32,8 @@ describe('TodoItemComponent', () => {
     component.todo = {
       id: '101',
       text: 'testing todo-item new text',
-      completed: false
+      completed: false,
+      editMode: false
     };
     expect(component.todo.text).toBe('testing todo-item new text',);
   })

@@ -1,0 +1,17 @@
+.edit__wrapper {
+    width: 500px;
+    height: 300px;
+    background-color: rgb(163, 163, 229);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+        margin-top: 50px;
+    }
+}
+
+.edit__control {
+    display: flex;
+    gap: 10px;
+}

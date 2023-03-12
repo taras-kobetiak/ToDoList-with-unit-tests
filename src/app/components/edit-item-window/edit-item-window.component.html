@@ -1,1 +1,9 @@
-<p>edit-item-window works!</p>
+<form class="edit__wrapper">
+    <input [formControl]="todoControl" type="text" id="inputData">
+    <p id="error" *ngIf="todoControl.invalid">Wrong data</p>
+    <div class="edit__control">
+        <button id="saveButton" type="button" (click)="onSaveButtonClicked()"
+            [disabled]="todoControl.invalid">Save</button>
+        <button type="button" (click)="onCancelButtonClicked()">Cancel</button>
+    </div>
+</form>

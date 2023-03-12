@@ -7,9 +7,9 @@ import { IToDo } from '../interfaces/todos.interface';
 export class DataService {
 
   toDoList: IToDo[] = [
-    { id: '1', text: 'first ToDo', completed: true },
-    { id: '2', text: 'second ToDo', completed: true },
-    { id: '3', text: 'third ToDo', completed: false }
+    { id: '1', text: 'first ToDo', completed: true, editMode: false },
+    { id: '2', text: 'second ToDo', completed: true, editMode: false },
+    { id: '3', text: 'third ToDo', completed: false, editMode: false }
   ]
 
   getToDoList(): IToDo[] {

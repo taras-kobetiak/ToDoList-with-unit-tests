@@ -1,0 +1,20 @@
+.todo__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    button {
+        height: 20px;
+    }
+}
+
+.todo__controler {
+    display: flex;
+    gap: 5px;
+}
+
+.todo__editMode {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}

@@ -18,19 +18,35 @@ export class TodosListComponent implements OnInit {
   }
 
   updateTodoStatus(todo: IToDo) {
-    const newToDo = { ...todo };
-    newToDo.completed = !newToDo.completed;
-    this.dataService.updateItem(newToDo);
+    todo.completed = !todo.completed;
+    this.dataService.updateItem(todo);
+    this.refreshData();
+  }
 
+  updateTodoText(todo: IToDo): void {
+    todo.editMode = !todo.editMode;
+    this.dataService.updateItem(todo);
     this.refreshData();
   }
 
   onAddButtonClicked(): void {
-    this.dataService.addItem({ id: '12', text: 'new todo', completed: false })
+    this.dataService.addItem({ id: '12', text: 'new todo', completed: false, editMode: false });
     this.refreshData();
   }
 
   refreshData(): void {
     this.todos = this.dataService.getToDoList();
+  }
+
+  deliteTodo(todo: IToDo): void {
+    this.dataService.deleteItem(todo);
+    this.refreshData();
+  }
+
+  switchEditMode(todo: IToDo) {
+    const newToDo = { ...todo };
+    newToDo.editMode = !newToDo.editMode;
+    this.dataService.updateItem(newToDo);
+    this.refreshData();
   }
 }
