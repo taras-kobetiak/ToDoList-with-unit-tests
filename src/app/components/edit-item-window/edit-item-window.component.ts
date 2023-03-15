@@ -21,8 +21,6 @@ export class EditItemWindowComponent implements OnInit {
   }
 
   onSaveButtonClicked(): void {
-    console.log(1);
-
     this.todo.text = this.todoControl.value;
     this.saveButtonClicked.emit(this.todo);
   }
